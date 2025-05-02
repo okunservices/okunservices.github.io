@@ -1,3 +1,26 @@
+
+:root {
+	/* font */
+	--sans: "Average Sans", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+	--serif: Iowan Old Style, Times New Roman, Times, serif;
+	--serif-hed: "Vollkorn SC", var(--serif);
+	--mono: Menlo, Consolas, Monaco, monospace;
+
+	/* z-index */
+	--z-bottom: -100;
+	--z-middle: 0;
+	--z-top: 100;
+	--z-overlay: 1000;
+
+	--border-radius: 2px;
+	--color-bg: #E7E4E4;
+	--color-primary: #931F31;
+	--color-fg: #4a1019;
+	
+	/* "1" second duration */
+	--1s: 1ms;
+}
+
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -84,36 +107,11 @@ h1, h2, h3, h4, h5, h6 {
 	width: 1px;
 }
 
-:root {
-	/* font */
-	--sans: "Average Sans", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-	--serif: Iowan Old Style, Times New Roman, Times, serif;
-	--serif-hed: "Vollkorn SC", var(--serif);
-	--mono: Menlo, Consolas, Monaco, monospace;
-
-	/* z-index */
-	--z-bottom: -100;
-	--z-middle: 0;
-	--z-top: 100;
-	--z-overlay: 1000;
-
-	--border-radius: 2px;
-	--color-bg: #E6CBCD;
-	--color-fg: #1C4286;
-	
-	/* "1" second duration */
-	--1s: 1ms;
-}
-
-@media screen and (prefers-reduced-motion: no-preference) {
-	:root {
-		--1s: 1s;
-	}
-}
-
 body {
 	font-family: var(--sans);
 	font-weight: 400;
+	background: var(--color-bg);
+	color: var(--color-fg);
 }
 
 p {
@@ -125,6 +123,7 @@ p {
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--serif-hed);
 	font-weight: 400;
+	color: var(--color-primary);
 }
 
 h1 {
@@ -152,6 +151,27 @@ h6 {
 	font-size: 20px;
 }
 
+a {
+	color: var(--color-primary);
+}
+
+
+nav {
+	margin: 1rem auto;
+}
+
+nav ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	margin: 0 1rem;
+}
+
 header {
 	max-width: 960px;
 	margin: 0 auto;
@@ -164,6 +184,10 @@ header .logo {
 	margin: 0 auto;
 }
 
+header .logo svg path {
+	stroke: var(--color-primary);
+}
+
 header h1 {
 	font-size: clamp(2.5rem, 4vw, 3.5rem);
 	line-height: 1;
@@ -171,9 +195,10 @@ header h1 {
 }
 
 header p {
-	font-size: clamp(1.5rem, 2vw, 2rem);
+	font-size: clamp(1.75rem, 2.25vw, 2.25rem);
 	line-height: 1;
 	margin: 1rem auto;
+	color: var(--color-primary);
 }
 
 section {
@@ -182,7 +207,12 @@ section {
 	padding: 1rem;
 }
 
-section p {
+section > p, section > h2, section > blockquote {
 	max-width: 640px;
 	margin: 1rem auto;
 }
+
+/* blockquote span {
+	display: flex;
+	justify-content: flex-end;
+} */
