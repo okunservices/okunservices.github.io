@@ -213,7 +213,7 @@ header p {
 }
 
 section {
-	max-width: 960px;
+	max-width: 1024px;
 	margin: 0 auto;
 	padding: 1rem;
 }
@@ -260,4 +260,16 @@ blockquote span {
 
 p.big {
 	font-size: 28px;
+}
+
+@media (max-width: 800px) {
+	blockquote {
+		width: calc(50% - 1em);
+	}
+}
+
+@media (max-width: 600px) {
+	blockquote {
+		width: 100%;
+	}
 }
