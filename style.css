@@ -262,6 +262,29 @@ p.big {
 	font-size: 28px;
 }
 
+#faq li {
+	list-style-type: none;
+}
+
+#faq details {
+	font-size: 24px;
+}
+
+#faq summary {
+	cursor: pointer;
+	/* background: var(--color-primary); */
+	/* color: var(--color-bg); */
+	/* padding: 0.5em; */
+	margin: 0.5em 0 ;
+}
+
+#faq details p {
+	/* background: var(--color-accent);
+	color: var(--color-bg);
+	padding: 0.5em; */
+}
+
+
 @media (max-width: 800px) {
 	blockquote {
 		width: calc(50% - 1em);
