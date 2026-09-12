@@ -54,6 +54,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 /* 6. Improve media defaults */
 img, picture, video, canvas, svg {
   display: block;
@@ -306,5 +310,17 @@ p.big strong {
 @media (max-width: 600px) {
 	blockquote {
 		width: 100%;
+	}
+
+	nav ul li:last-of-type {
+		display: none;
+	}
+
+	h2 {
+		font-size: 32px;
+	}
+
+	p {
+		font-size: 20px;
 	}
 }
